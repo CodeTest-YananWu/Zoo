@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    .item-block {
+        background-color: beige;
+    }
+</style>
+<h1>Zookeepers <a href="Home/ZookeepersEdit">Add</a></h1>
+<br/>
+
+<div ng-repeat="keeper in Zookeepers" class="col-md-3 item-block">
+    <div>
+        <label>ID: {{keeper.StaffID}}</label>
+    </div>
+    <div>
+        <label>First Name: {{keeper.FirstName}}</label>
+    </div>
+    <div>
+        <label>Last Name: {{keeper.LastName}}</label>
+    </div>
+    <div>
+        <label>Phone: {{keeper.PhoneNumber}}</label>
+    </div>
+    <div>
+        <label>Date of Birth: {{keeper.DateOfBirth}}</label>
+    </div>
+    <div>
+        <label>Email: {{keeper.Email}}</label>
+    </div>
+</div>

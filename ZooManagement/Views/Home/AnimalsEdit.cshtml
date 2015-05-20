@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+<form name="form" novalidate>
+    <div>
+        <label class="error">{{Error}}</label>
+    </div>
+    <div>
+        <label>Animal Type:</label>
+        <select name="AnimalType" ng-model="NewAnimal.AnimalType" required >
+            <option ng-repeat="type in AnimalTypes" ng-value="type">{{type}}</option>
+        </select>
+        <label class="error" ng-show="form.AnimalType.$error.required">*</label>
+    </div>
+    <div>
+        <label>Nick Name:</label><input type="text" name="NickName" ng-model="NewAnimal.NickName" required /><label class="error" ng-show="form.NickName.$error.required">*</label>
+    </div>
+    <div>
+        <label>Age:</label><input type="number" name="Age" min="0" ng-model="NewAnimal.Age" required /><label class="error" ng-show="form.Age.$error.required">*</label>
+    </div>
+    <div>
+        <label>Gender:</label>
+        <select name="Gender" ng-model="NewAnimal.Gender" required >
+            <option ng-repeat="gender in AnimalGenders" ng-value="gender">{{gender}}</option>
+        </select>
+        <label class="error" ng-show="form.Gender.$error.required">*</label>
+    </div>
+    <div>
+        <label>Zookeeper: </label>
+        <input placeholder="FirstName LastName" type="text" name="Zookeeper" ng-model="ZookeeperName" list="Zookeepers" required />
+        <datalist id="Zookeepers">
+            <option ng-repeat="keeper in Zookeepers" ng-value="keeper.Id">{{keeper.FirstName}} {{keeper.LastName}} -{{keeper.StaffID}}</option>
+        </datalist>
+        <label class="error" ng-show="form.Zookeeper.$error.required">*</label>
+        <a href="Home/ZookeepersEdit">Add Zookeeper</a>
+    </div>
+
+    <button ng-click="AddAnimal()" ng-disabled="form.$invalid">Add</button>
+</form>

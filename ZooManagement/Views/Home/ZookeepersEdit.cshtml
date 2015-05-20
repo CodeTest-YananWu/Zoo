@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+<form name="form" novalidate>
+    <div>
+        <label class="error">{{Error}}</label>
+    </div>
+    <div>
+        <label>First Name:</label><input type="text" name="FirstName" ng-model="NewKeeper.FirstName" required /><label class="error" ng-show="form.FirstName.$error.required">*</label>
+    </div>
+    <div>
+        <label>Last Name:</label><input type="text" name="LastName" ng-model="NewKeeper.LastName" required /><label class="error" ng-show="form.LastName.$error.required">*</label>
+    </div>
+    <div>
+        <label>Phone Number:</label><input type="text" name="PhoneNumber" ng-model="NewKeeper.PhoneNumber" required /><label class="error" ng-show="form.PhoneNumber.$error.required">*</label>
+    </div>
+    <div>
+        <label>Date Of Birth:</label><input placeholder="dd/mm/yyyy" type="text" name="DateOfBirth" ng-model="NewKeeper.DateOfBirth" required /><label class="error">{{dobError}}</label><label class="error" ng-show="form.DateOfBirth.$error.required">*</label>
+    </div>
+    <div>
+        <label>Email: </label><input placeholder="valid email" type="email" name="Email" ng-model="NewKeeper.Email" required /><label class="error" ng-show="form.Email.$error.required">*</label>
+    </div>
+
+    <button ng-click="AddKeeper()" ng-disabled="form.$invalid">Add</button>
+</form>
+

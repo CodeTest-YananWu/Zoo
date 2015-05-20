@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+
+<h1>Animals <a href="Home/AnimalsEdit">Add</a></h1>
+<div ng-controller="AnimalCtrl">
+    <div ng-repeat="animal in Animals" class="col-md-3 item-block">
+        <div>
+            <label>ID: {{animal.AnimalID}}</label>
+        </div>
+        <div>
+            <label>Type: {{animal.AnimalType}}</label>
+        </div>
+        <div>
+            <label>Nick Name: {{animal.NickName}}</label>
+        </div>
+        <div>
+            <label>Age: {{animal.Age}}</label>
+        </div>
+        <div>
+            <label>Gender: {{animal.Gender}}</label>
+        </div>
+        <div>
+            <label>Zookeeper: {{animal.Zookeeper.FirstName}} {{animal.Zookeeper.LastName}}</label><label class="error">{{keeperError}}</label>
+        </div>
+    </div>
+</div>
